@@ -3,6 +3,7 @@ using DespensaSabattini.BD.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DespensaSabattini.BD.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20230704065410_relaciones")]
+    partial class relaciones
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,7 +47,7 @@ namespace DespensaSabattini.BD.Migrations
 
                     b.HasIndex("UsuarioId");
 
-                    b.ToTable("Pagos", (string)null);
+                    b.ToTable("Pagos");
                 });
 
             modelBuilder.Entity("DespensaSabattini.BD.Data.Entity.Proveedor", b =>
@@ -81,7 +84,7 @@ namespace DespensaSabattini.BD.Migrations
 
                     b.HasIndex("PagoId");
 
-                    b.ToTable("Proveedores", (string)null);
+                    b.ToTable("Proveedores");
                 });
 
             modelBuilder.Entity("DespensaSabattini.BD.Data.Entity.Rol", b =>
@@ -99,7 +102,7 @@ namespace DespensaSabattini.BD.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Roles", (string)null);
+                    b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("DespensaSabattini.BD.Data.Entity.TipoPago", b =>
@@ -122,7 +125,7 @@ namespace DespensaSabattini.BD.Migrations
 
                     b.HasIndex("PagoId");
 
-                    b.ToTable("TipoPagos", (string)null);
+                    b.ToTable("TipoPagos");
                 });
 
             modelBuilder.Entity("DespensaSabattini.BD.Data.Entity.Usuario", b =>
@@ -159,7 +162,7 @@ namespace DespensaSabattini.BD.Migrations
 
                     b.HasIndex("RolId");
 
-                    b.ToTable("Usuarios", (string)null);
+                    b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("DespensaSabattini.BD.Data.Entity.Pago", b =>

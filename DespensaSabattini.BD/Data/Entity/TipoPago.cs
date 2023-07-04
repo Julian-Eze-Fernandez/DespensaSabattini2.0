@@ -14,5 +14,8 @@ namespace DespensaSabattini.BD.Data.Entity
         [Required(ErrorMessage = "El NOMBRE del PAGO es Obligatorio")]
         [MaxLength(15, ErrorMessage = "Solo se aceptan hasta 15 caracteres en el NOMBRE")]
         public string NombrePago { get; set; }
+
+        public int Pagoid { get; set; }
+        public Pago Pago { get; set; }
     }
 }

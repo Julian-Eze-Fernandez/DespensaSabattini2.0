@@ -16,6 +16,10 @@ namespace DespensaSabattini.BD.Data.Entity
         public string Descripcion { get; set; }
 
         [Required(ErrorMessage = "El MONTO es Obligatorio")]
-        public double monto { get; set; }
+        public double Monto { get; set; }
+
+        public int UsuarioId { get; set; }
+        public Usuario Usuario { get; set; }
+
     }
 }

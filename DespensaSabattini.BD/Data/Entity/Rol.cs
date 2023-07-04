@@ -15,5 +15,7 @@ namespace DespensaSabattini.BD.Data.Entity
         [Required(ErrorMessage = "El NOMBRE del ROL es Obligatorio")]
         [MaxLength(20, ErrorMessage = "Solo se aceptan hasta 20 caracteres en el NOMBRE")]
         public string NombreRol { get; set; }
+
+        public List<Usuario> Usuarios { get; set; } = new List<Usuario>();
     }
 }
